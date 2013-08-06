@@ -13,25 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-
-// Used for HTTP request / response handling.
-using System.Net;
-using System.Text;
-using System.Web;
-
-// Used for endpoint constants
-using Google.Apis.Authentication.OAuth2;
-
-// Used to deserialize the OAuth response.
-using Newtonsoft.Json;
-
 namespace GPlusQuickstartCsharp
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+
+    // Used for HTTP request / response handling.
+    using System.Net;
+    using System.Text;
+    using System.Web;
+
+    // Used for endpoint constants
+    using Google.Apis.Authentication.OAuth2;
+
+    // Used to deserialize the OAuth response.
+    using Newtonsoft.Json;
+
     /// <summary>
     /// A utility class used to manually exchange an authorization code for
     /// OAuth2 credentials. When "postmessage" is accepted as a redirect URI for
@@ -41,17 +40,15 @@ namespace GPlusQuickstartCsharp
     public class ManualCodeExchanger
     {
         /// <summary>
-        /// Exchanges an OAuth2 authorization code for OAuth2 credentials.
+        /// Exchanges an OAuth 2 authorization code for OAuth 2 credentials.
         /// </summary>
-        /// <param name="code">The OAuth2 authorization code from the
-        /// sign-in button.</param>
-        /// <returns></returns>
-        static public OAuthResponseObject ExchangeCode(string code)
+        /// <param name="code">The OAuth 2 authorization code from the sign-in button.</param>
+        /// <returns>An OAuth v2 response object retrieved from JSON.</returns>
+        public static OAuthResponseObject ExchangeCode(string code)
         {
             // The request will be made to the authentication server.
             WebRequest request = WebRequest.Create(
-                GoogleAuthenticationServer.Description.TokenEndpoint
-            );
+                GoogleAuthenticationServer.Description.TokenEndpoint);
 
             // You must use POST for the code exchange.
             request.Method = "POST";
@@ -88,7 +85,7 @@ namespace GPlusQuickstartCsharp
         /// <param name="code">The authorization code to be exchanged for
         /// tokens.</param>
         /// <returns>The POST string.</returns>
-        static public string FormPostData(string code)
+        public static string FormPostData(string code)
         {
             StringBuilder builder = new StringBuilder();
             builder.Append("code=");
@@ -109,10 +106,29 @@ namespace GPlusQuickstartCsharp
     /// </summary>
     public class OAuthResponseObject
     {
+        /// <summary>
+        /// The OAuth 2 access token.
+        /// </summary>
         public string access_token;
+
+        /// <summary>
+        /// The OAuth 2 refresh token.
+        /// </summary>
         public string refresh_token;
+
+        /// <summary>
+        /// The OAuth 2 one-time-use code.
+        /// </summary>
         public string code;
+
+        /// <summary>
+        /// The seconds until expiration.
+        /// </summary>
         public int expires_in;
+
+        /// <summary>
+        /// The OAuth 2 ID token.
+        /// </summary>
         public string id_token;
     }
 }

@@ -15,27 +15,36 @@
  *
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Routing;
-using System.Web.Security;
-using System.Web.SessionState;
-
 namespace GPlusQuickstartCsharp
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web;
+    using System.Web.Routing;
+    using System.Web.Security;
+    using System.Web.SessionState;
+
     /// <summary>
     /// Routes the sample endpoints to the handler.
     /// </summary>
     /// @author class@google.com (Gus Class)
     public class Global : System.Web.HttpApplication
     {
+        /// <summary>
+        /// Implements the application start interface.
+        /// </summary>
+        /// <param name="sender">The object that started the application.</param>
+        /// <param name="e">Event arguments to the application.</param>
         private void Application_Start(object sender, EventArgs e)
         {
-            RegisterRoutes(RouteTable.Routes);
+            this.RegisterRoutes(RouteTable.Routes);
         }
 
+        /// <summary>
+        /// Registers all of the RESTful route maps.
+        /// </summary>
+        /// <param name="routes">The application's routes to append to.</param>
         private void RegisterRoutes(RouteCollection routes)
         {
             routes.Add("catchall", new Route("{*url}", new Signin()));
