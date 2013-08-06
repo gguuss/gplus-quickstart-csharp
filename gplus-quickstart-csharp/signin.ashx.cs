@@ -217,7 +217,9 @@ namespace GPlusQuickstartCsharp
             if (context.Request.Path.Contains("/people"))
             {
                 // Get the PeopleFeed for the currently authenticated user.
-                PeopleFeed pf = ps.People.List("me", PeopleResource.CollectionEnum.Visible).Fetch();
+                PeopleFeed pf =
+                	ps.People.List(
+                    "me", PeopleResource.CollectionEnum.Visible).Execute();
 
                 // This JSON, representing the people feed, will later be
                 // parsed by the JavaScript client.

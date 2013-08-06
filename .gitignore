@@ -9,7 +9,7 @@ gplus-quickstart-csharp/[Dd]ebug*/
 gplus-quickstart-csharp/[Rr]elease*/
 
 # Ignore NuGet content
-packages/*
+# packages/*
 
 # Ignore stored application data (EF)
 PhotoHunt/App_Data/*
