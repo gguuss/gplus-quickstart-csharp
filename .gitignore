@@ -1,0 +1,16 @@
+# Ignore basic Visual Studio generated caches
+*.user
+*.suo
+
+# Ignore Visual Studio generated directories
+gplus-quickstart-csharp/obj/
+gplus-quickstart-csharp/[Bb]in
+gplus-quickstart-csharp/[Dd]ebug*/
+gplus-quickstart-csharp/[Rr]elease*/
+
+# Ignore NuGet content
+# packages/*
+
+# Ignore stored application data (EF)
+PhotoHunt/App_Data/*
+
