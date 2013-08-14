@@ -50,11 +50,13 @@
     </div>
 
     
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" method="post">
     <div>
         <input type="hidden" name="code" id="code" />
         <input type="hidden" name="email" id="email" />
         <input type="hidden" name="name" id="name" />
+        <input type="text" name="entry"/>
+        <input type="submit" value="someval" />
     </div>
     </form>
 </body>
