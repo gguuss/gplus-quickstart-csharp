@@ -1,7 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPlusQuickstartCsharp", "gplus-quickstart-csharp\gplus-quickstart-csharp.csproj", "{52DA800C-5A00-4908-B4D6-4422F31B65A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlusQuickStart", "plus-quickstart\PlusQuickStart.csproj", "{52DA800C-5A00-4908-B4D6-4422F31B65A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C5396307-FD7C-4617-A75B-460A97AE7FC7}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
